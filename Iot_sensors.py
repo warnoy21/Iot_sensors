@@ -62,7 +62,7 @@ except KeyboardInterrupt:
     print("Program interrupted")
 
 finally:
-    # Close the serial port when done
+    # Close the serial port 
     ser.close()
     print("Serial port closed.")
     GPIO.output(SERIAL_PIN, GPIO.LOW)  
