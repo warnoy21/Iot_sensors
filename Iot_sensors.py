@@ -11,6 +11,7 @@ import RPi.GPIO as GPIO
 import pywemo
 import time
 
+time.sleep(20)
 # GPIO pins for the serial and wemo LED
 SERIAL_PIN = 16
 WEMO_PIN = 12
@@ -55,8 +56,8 @@ try:
         # Read data from UART
         if ser.in_waiting > 0:  # Check if any data is available
             received_data = ser.read(ser.in_waiting).decode('utf-8', errors='replace')
-            if received_data == 'O':
-                wemo_outlet.off()
+            print(f"Received:{received_data}")
+            wemo_outlet.off()
 
 except KeyboardInterrupt:
     print("Program interrupted")
